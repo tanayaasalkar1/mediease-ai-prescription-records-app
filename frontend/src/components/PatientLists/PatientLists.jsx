@@ -18,7 +18,7 @@ const PatientLists = () => {
   ------------------------------- */
   const fetchPatients = async () => {
     try {
-      const res = await axiosClient.get("/patients/get-patients");
+      const res = await axiosClient.get("api/patients/get-patients");
 
       console.log("Backend Response:", res.data);
 
