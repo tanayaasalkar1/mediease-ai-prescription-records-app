@@ -18,7 +18,7 @@ const PatientLists = () => {
   ------------------------------- */
   const fetchPatients = async () => {
     try {
-      const res = await axiosClient.get("api/patients/get-patients");
+      const res = await axiosClient.get("/api/patients/get-patients");
 
       console.log("Backend Response:", res.data);
 
@@ -69,7 +69,7 @@ const PatientLists = () => {
     if (!window.confirm("Are you sure?")) return;
 
     try {
-      await axiosClient.delete(`api/patients/delete-patient/${id}`);
+      await axiosClient.delete(`/api/patients/delete-patient/${id}`);
       setPatients((prev) => prev.filter((p) => p._id !== id));
       toast.success("Patient deleted successfully");
     } catch (error) {
