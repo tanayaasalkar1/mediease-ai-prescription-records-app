@@ -19,12 +19,12 @@ const PatientPopup = ({ patient, onClose, onUpdate }) => {
     });
   };
 
-  //to handle eidt and save
+  //to handle edit and save
   const handleEdit = async () => {
   if (isEditing) {
     try {
       const res = await axiosClient.put(
-        `/patients/update-patient/${formData._id}`,
+        `/api/patients/update-patient/${formData._id}`,
         formData
       );
 
