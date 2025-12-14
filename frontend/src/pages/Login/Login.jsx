@@ -44,7 +44,7 @@ function Login() {
 
     try {
       const response = await axiosClient.post(
-        "/auth/login",
+        "api/auth/login",
         formData,
         { withCredentials: true }
       );
