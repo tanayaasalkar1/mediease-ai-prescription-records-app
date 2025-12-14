@@ -81,12 +81,13 @@ export const login = async (req, res)  => {
         //generating token using jwt
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '7d'});
         //sending token via cookie
-        res.cookie('token', token, {
-            httpOnly: true, //only http request can access this cookie
-            secure: process.env.NODE_ENV === 'production',  //secure will be false for production environment and false for developement environment
-            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
-            maxAge: 7 * 24 * 60 * 60 * 1000   //token expiring in 7 days
-        })
+          res.cookie("token", token, {
+          httpOnly: true,
+          secure: true,        // Render uses HTTPS
+          sameSite: "none",    // REQUIRED for cross-origin
+          maxAge: 7 * 24 * 60 * 60 * 1000,
+        });
+
         return res.json({success:true});
     } catch (error) {
         
