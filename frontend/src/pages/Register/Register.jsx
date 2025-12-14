@@ -50,7 +50,7 @@ function Register() {
 
     try {
       const response = await axiosClient.post(
-        "api/auth/register",
+        "/api/auth/register",
         formData,
         { withCredentials: true }
       );
