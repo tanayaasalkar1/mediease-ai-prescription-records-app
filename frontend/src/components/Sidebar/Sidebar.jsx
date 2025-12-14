@@ -26,7 +26,7 @@ const Sidebar = ({ children }) => {
 
   const handleLogout = async () => {
   try {
-    const response = await axiosClient.post("api/auth/logout");
+    const response = await axiosClient.post("/api/auth/logout");
 
     if (response.data.success) {
       toast.info("You have logged out successfully!", {
