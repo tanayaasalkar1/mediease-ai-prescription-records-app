@@ -18,9 +18,13 @@ const port = process.env.PORT || 4000
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: "https://mediease-ai-prescription-records-app-1.onrender.com",
+  origin: [
+    "http://localhost:5173",
+    "https://mediease-ai-prescription-records-app-1.onrender.com"
+  ],
   credentials: true
-}))
+}));
+
 
 
 //API endpoints
