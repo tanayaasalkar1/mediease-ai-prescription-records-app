@@ -20,7 +20,7 @@ const PrescriptionPopup = ({ patient, onClose }) => {
     setLoadingAI(true);
 
     try {
-      const response = await axiosClient.post("/patients/generate-ai-summary", {
+      const response = await axiosClient.post("api/patients/generate-ai-summary", {
         prescription,
         patientName: patient.name,
         disease: patient.disease,
@@ -52,7 +52,7 @@ const handleSavePrescription = async () => {
 
   try {
     const response = await axiosClient.post(
-      `/patients/add-prescription/${patient._id}`,
+      `api/patients/add-prescription/${patient._id}`,
       { content: prescription }
     );
 
