@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser"
 import connectDB from "./config/mongodb.js"
 import authRouter from "./routes/authRoutes.js"
 import patientRouter from "./routes/patientRoutes.js"
+import path from "path";
 
 //initialize express app
 const app = express();
@@ -36,4 +37,10 @@ app.use('/api/patients', patientRouter);
 //  Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
+});
+
+app.use(express.static(path.join(process.cwd(), "frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(process.cwd(), "frontend/dist/index.html"));
 });
