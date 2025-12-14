@@ -48,7 +48,7 @@ const NewPatient = () => {
     };
 
     try {
-      const res = await axiosClient.post("api/patients/add-patient", payload);
+      const res = await axiosClient.post("/api/patients/add-patient", payload);
 
       if (res.data.success) {
         toast.success("Patient Added Successfully!", { autoClose: 1500 });
