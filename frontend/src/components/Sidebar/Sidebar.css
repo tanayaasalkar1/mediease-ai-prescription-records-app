@@ -1,0 +1,174 @@
+/* ============================
+   SIDEBAR MAIN CONTAINER
+============================ */
+.sidebar-div-main {
+  width: 250px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* SIDEBAR STATES */
+.sidebar-div-main.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar-div-main.open {
+  transform: translateX(0);
+}
+
+/* ============================
+   LOGO SECTION
+============================ */
+.doc-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.doc-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+/* ============================
+   SIDEBAR MENU
+============================ */
+.sidebar-div-main ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar-div-main li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #374151;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-div-main li:hover {
+  background-color: #f3f4f6;
+  color: #2563eb;
+}
+
+.sidebar-div-main a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 22px;
+  color: #2563eb;
+}
+
+/* ============================
+   MOBILE HAMBURGER ICON
+============================ */
+.mobile-menu-icon {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 30px;
+  color: #1e3a8a;
+  z-index: 1100;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-icon:hover {
+  color: #2563eb;
+}
+
+/* ============================
+   MAIN CONTENT AREA
+============================ */
+.main-content {
+  margin-left: 250px;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+
+/* ---------- Mobile (Phones) ---------- */
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .sidebar-div-main {
+    width: 230px;
+    transform: translateX(-100%);
+  }
+
+  .sidebar-div-main.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+/* ---------- Small Phones ---------- */
+@media (max-width: 480px) {
+  .sidebar-div-main {
+    width: 200px;
+  }
+
+  .doc-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sidebar-div-main li {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .menu-icon {
+    font-size: 18px;
+  }
+}
+
+/* ---------- Tablet & Desktop ---------- */
+@media (min-width: 769px) {
+  .mobile-menu-icon {
+    display: none;
+  }
+
+  .sidebar-div-main {
+    transform: none !important;
+  }
+
+  .main-content {
+    margin-left: 250px;
+  }
+}

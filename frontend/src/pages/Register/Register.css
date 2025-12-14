@@ -1,0 +1,122 @@
+.register-container {
+  height: 100vh;
+  width: 100%;
+  background: 
+    linear-gradient(to bottom, #0a1f44 0%, #1e3a8a 35%, #3b82f6 60%, #9b99f5 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.register-logo {
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.register-box {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px 50px;
+  width: 450px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.register-box h2 {
+  color: #fff;
+  font-weight: 700;
+}
+
+.register-box p {
+  color: rgba(240, 240, 255, 0.9);
+  margin-bottom: 25px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  color: #fff;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  outline: none;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  transform: translateY(-2px);
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* space for eye icon */
+  box-sizing: border-box;
+}
+
+/* Eye icon styling */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+/* Prevent layout shifting */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  min-height: 18px; /* keeps layout fixed */
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .password-wrapper input {
+    padding-right: 36px;
+  }
+
+  .password-toggle {
+    right: 10px;
+    font-size: 18px;
+  }
+}
+

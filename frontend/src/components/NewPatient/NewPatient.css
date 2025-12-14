@@ -1,0 +1,216 @@
+/* =============================
+   ADD PATIENT PAGE (Default Desktop)
+============================= */
+.add-patient-page-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 50px;
+  margin-left: 80px;
+}
+
+.page-title {
+  color: rgb(23, 23, 121);
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.patient-form-large {
+  width: 700px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: rgb(23, 23, 121);
+  background-color: #fff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.add-btn,
+.write-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #1e7e34;
+}
+
+.write-btn {
+  background-color: rgb(23, 23, 121);
+  color: white;
+}
+
+.write-btn:hover {
+  background-color: rgb(15, 15, 90);
+}
+
+/* =============================
+   RESPONSIVE DESIGN
+============================= */
+
+/* ----- Large Screens (1200px and up) ----- */
+@media (min-width: 1200px) {
+  .patient-form-large {
+    width: 700px;
+  }
+}
+
+/* ----- iPad Pro (1025px – 1199px) ----- */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .add-patient-page-left {
+    margin-left: 60px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+
+  .patient-form-large {
+    width: 600px;
+    padding: 30px;
+  }
+}
+
+/* ----- iPad Air / Tablet (768px – 1024px) ----- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .add-patient-page-left {
+    margin: 40px auto;
+    align-items: center;
+  }
+
+  .page-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .patient-form-large {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 15px;
+  }
+
+  .add-btn,
+  .write-btn {
+    font-size: 15px;
+    padding: 10px 22px;
+  }
+}
+
+/* ----- Mobile Large (481px – 767px) ----- */
+@media (min-width: 481px) and (max-width: 767px) {
+  .add-patient-page-left {
+    margin: 30px 15px;
+    align-items: center;
+  }
+
+  .page-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .patient-form-large {
+    width: 100%;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .add-btn,
+  .write-btn {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* ----- Small Mobile (≤ 480px) ----- */
+@media (max-width: 480px) {
+  .form-group label {
+    font-size: 12px;
+  }
+  .form-group {
+    margin-bottom: 14px;
+  }
+  .add-patient-page-left {
+    margin: 20px 10px;
+    align-items: center;
+  }
+
+  .page-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .patient-form-large {
+    width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 8.5px;
+    padding: 5px;
+  }
+
+  .add-btn,
+  .write-btn {
+    font-size: 8.5px;
+    padding: 8px 10px;
+  }
+}
