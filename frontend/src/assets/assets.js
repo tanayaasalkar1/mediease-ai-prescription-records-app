@@ -1,8 +1,8 @@
-import doc_logo from './doc_logo.jpg';
+import mediease_logo from './mediease_logo.jpg';
 import bg from './bg.jpg'
 
 export const assets = {
-    doc_logo,
+    mediease_logo,
     bg
 }
 

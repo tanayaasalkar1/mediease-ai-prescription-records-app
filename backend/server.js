@@ -41,6 +41,6 @@ app.listen(port, () => {
 
 app.use(express.static(path.join(process.cwd(), "frontend/dist")));
 
-app.get("*", (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(process.cwd(), "frontend/dist/index.html"));
 });

@@ -1,83 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400;500&display=swap');
+
 .welcome-container {
   height: 100vh;
   width: 100%;
   background: 
-    linear-gradient(to bottom, #0a1f44 0%, #1e3a8a 35%, #3b82f6 60%, #9b99f5 95%), 
-    url('/src/assets/bg.jpg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    radial-gradient(ellipse at 70% 20%, rgba(255, 182, 193, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 192, 203, 0.25) 0%, transparent 50%),
+    linear-gradient(160deg, #fdf6f0 0%, #f5e6d8 40%, #fce4ec 75%, #f8dce8 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lato', sans-serif;
   text-align: center;
-  color: #0f172a;
+  color: #2c1a0e;
   position: relative;
   overflow: hidden;
+}
+
+/* === Soft texture overlay === */
+.welcome-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c49a6c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === Decorative blobs === */
+.welcome-container::after {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -80px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* === Logo at top left === */
 .welcome-logo {
   position: absolute;
-  top: 25px;
-  left: 35px;
-  width: 90px;
-  height: 90px;
+  top: 28px;
+  left: 38px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  border-radius: 50%;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(180, 100, 80, 0.18));
+}
+
+/* === Main content wrapper === */
+.welcome-container > *:not(.welcome-logo) {
+  position: relative;
+  z-index: 1;
 }
 
 /* === Heading === */
 .welcome-container h1 {
-  font-family: 'Quicksand', 'Poppins', sans-serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 3.2rem;
   font-style: italic;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
-  animation: fadeIn 1s ease-in-out;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+  color: #2c1a0e;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  animation: fadeUp 0.9s ease-out both;
 }
 
 /* === Subtext === */
 .welcome-container p {
-  font-size: 1.1rem;
-  color: rgba(240, 240, 255, 0.95);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.30rem;
+  font-weight: 500;
+  color: #6b4226;
   margin-bottom: 2rem;
-  max-width: 600px;
-  line-height: 1.6;
-  opacity: 0.95;
-  margin-top: 5px;
+  max-width: 500px;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  animation: fadeUp 0.9s ease-out 0.15s both;
+}
+
+.welcome-container p:last-child {
+  font-size: 1.30rem;
+  color: #a07060;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  animation: fadeUp 0.9s ease-out 0.35s both;
 }
 
 /* === Login Button === */
 .welcome-container button {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
-  color: #ffffff;
+  background: linear-gradient(135deg, #4a2512 0%, #7b3f2a 100%);
+  color: #fdf6f0;
   border: none;
-  padding: 12px 30px;
-  font-size: 1.1rem;
+  padding: 13px 38px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
   font-weight: 500;
-  border-radius: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 15px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 18px rgba(74, 37, 18, 0.22), 0 1px 4px rgba(74, 37, 18, 0.1);
+  animation: fadeUp 0.9s ease-out 0.25s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-container button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+  border-radius: inherit;
 }
 
 .welcome-container button:hover {
-  background: linear-gradient(135deg, #1e40af, #2563eb);
-  transform: translateY(-3px);
-  box-shadow: 0px 6px 20px rgba(30, 58, 138, 0.6);
+  background: linear-gradient(135deg, #3a1a08 0%, #6b3020 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(74, 37, 18, 0.3), 0 2px 6px rgba(74, 37, 18, 0.14);
 }
 
-/* === Animation (soft fade-in) === */
-@keyframes fadeIn {
+.welcome-container button:active {
+  transform: translateY(0);
+}
+
+/* === Animation === */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -93,11 +154,13 @@
 
   .welcome-container p {
     font-size: 1rem;
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .welcome-logo {
-    width: 70px;
-    height: 70px;
+    width: 68px;
+    height: 68px;
+    top: 20px;
+    left: 20px;
   }
 }

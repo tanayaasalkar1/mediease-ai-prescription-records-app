@@ -8,7 +8,7 @@ function Welcome() {
 
   return (
     <div className="welcome-container">
-      <img src={assets.doc_logo} alt="MediEase Logo" className="welcome-logo" />
+      <img src={assets.mediease_logo} alt="MediEase Logo" className="welcome-logo" />
       <h1>Welcome to MediEase</h1>
       <p>Your intelligent health management system is here...</p>
       <button onClick={() => navigate('/login')}>Login</button>
